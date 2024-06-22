@@ -30,3 +30,12 @@ def classify(unknown, dataset, labels, k):
     return 1
   else:
     return 0
+def find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, k):
+  num_correct = 0.0
+  for title in validation_set:
+    guess = classify(validation_set[title], training_set, training_labels, k)
+    if(guess == validation_labels[title]):
+      num_correct += 1
+  return num_correct/len(validation_set)
+result = find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 3)
+print(result)
