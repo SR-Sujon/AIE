@@ -1,4 +1,4 @@
-#from movies import training_set, training_labels, validation_set, validation_labels
+from movies import training_set, training_labels, validation_set, validation_labels
 
 def distance(movie1, movie2):
   squared_difference = 0
@@ -37,5 +37,5 @@ def find_validation_accuracy(training_set, training_labels, validation_set, vali
     if(guess == validation_labels[title]):
       num_correct += 1
   return num_correct/len(validation_set)
-#result = find_validation_accuracy(training_set,training_labels, validation_set, validation_labels, 3)
-#print(result)
+result = find_validation_accuracy(training_set,training_labels, validation_set, validation_labels, 3)
+print(result)
